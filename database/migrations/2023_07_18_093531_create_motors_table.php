@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('motors', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
+            // $table->string('name',100);
             $table->string('model',50);
             $table->string('color',30);
-            $table->string('price',50);
-            $table->string('image',100);
-            $table->string('weight',50);
+            $table->float('price')->nullable();
+            // $table->decimal('price',9,4)->nullable();
+            $table->string('image',250)->nullable();
+            $table->string('weight',50)->nullable();
             $table->timestamps();
         });
     }
