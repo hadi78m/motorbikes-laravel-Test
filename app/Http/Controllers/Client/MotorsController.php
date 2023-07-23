@@ -70,16 +70,22 @@ class MotorsController extends Controller
             [
                 'model' => 'required',
                 'image' => 'required|mimes:png,jpg,jpeg|max:2048',
-                'price' => 'required',
+                'price' => 'required|numeric|between:0,99999999.99',
                 'color' => 'required',
-                'weight' => 'required'
+                'weight' => 'required|numeric|between:0,9999.99'
             ],
             [
-                'image.required' => 'الصاق عکس الزامیست',
+                'image.required' => ' عکس الزامیست',
+                'image.max' => 'حداکثر سایز قابل قبول 2 مگ م یباشد',
+                'image.mimes' => 'فرمت های قابل قبول png,jpg',
                 'model.required' => 'مدل الزامیست',
-                'price.required' => 'مدل الزامیست',
-                'color.required' => 'مدل الزامیست',
-                'weight.required' => 'مدل الزامیست',
+                'price.required' => 'قیمت الزامیست',
+                'weight.required' => 'وزن الزامیست',
+                'price.numeric' => 'عدد وارد نمایید',
+                'price.between' => 'عدد مناسب وارد نمایید',
+                'weight.between' => 'عدد مناسب وارد نمایید',
+                'weight.numeric' => 'عدد وارد نمایید',
+                'color.required' => 'رنگ الزامیست',
             ]
         );
 
