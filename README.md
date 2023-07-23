@@ -32,11 +32,34 @@
 git clone https://github.com/hadi78m/motorbikes-laravel-Test.git
 
 ```
+- با دستور زیر پروژه را آپدیت نمایید
+
+```shell
+composer update
+```
+
+```shell
+npm update
+```
 
 - فایل env  خود را بر اساس پایگاه داده تغییر دهید
+
 
 - با دستور زیر دیتابیس را نصب نمایید
 
 ```shell
 php artisan migrate
+```
+- برای استفاده درحالت لوکال دستورات زیر را اجرا نمایید
+
+```shell
+php artisan serve
+```
+
+```shell
+npm run dev
+```
+- وارد آدرس زیر شوید
+```shell
+http://127.0.0.1:8000
 ```
