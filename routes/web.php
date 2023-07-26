@@ -16,17 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/test', fn () => view('client/test'))->name('test');
-Route::any('/index',[MotorsController::class,'index'])->name('index');
-Route::any('/filter',[MotorsController::class,'filter'])->name('filter');
+// Route::get('/test', fn () => view('client/test'))->name('test');
+// Route::any('/index',[MotorsController::class,'index'])->name('index');
+// Route::any('/filter',[MotorsController::class,'filter'])->name('filter');
 Route::middleware(['splade'])->group(function () {
-    // Route::get('/', fn () => view('home'))->name('home');
-    // Route::get('/', fn () => view('home'))->name('home');
+
     Route::get('/',[MotorsController::class,'index'])->name('home');
     Route::post('/store',[MotorsController::class,'store'])->name('store');
-    // Route::get('show/{id}',[MotorsController::class,'show'])->name('show.motor');
-    // Route::match(['get','post'],'filter',[MotorsController::class,'filter'])->name('filter');
-    Route::get('/docs', fn () => view('docs'))->name('docs');
+
+    // Route::get('/docs', fn () => view('docs'))->name('docs');
     Route::get('/add', fn () => view('client.add'))->name('add');
     Route::get('/show/{id}', fn ($id = null) => view('client.show',['id'=>$id,'image'=>Motor::whereId($id)->select('image')->first()]))->name('show.motor');
 
